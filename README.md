@@ -1,54 +1,66 @@
-# Astro Starter Kit: Basics
+# PokeFetch
 
-```sh
-npm create astro@latest -- --template basics
-```
+¡Bienvenido a PokeFetch! 🎉
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+¿Te apasionan los Pokémon y quieres saber más sobre ellos? Este es el proyecto perfecto para ti. PokeFetch te permite buscar información sobre tus Pokémon favoritos usando una API genial. 🚀
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ¿Qué es esto?
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+PokeFetch es un proyecto simple y divertido que desarrollé para aprender a trabajar con APIs usando Astro. Aquí puedes introducir el nombre de cualquier Pokémon y obtener detalles como su altura, peso y tipos. ¡Es como una Pokédex interactiva en la web!
 
-## 🚀 Project Structure
+## Tecnologías utilizadas
 
-Inside of your Astro project, you'll see the following folders and files:
+Este proyecto fue creado con un conjunto de tecnologías modernas para hacerlo ágil y genial:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Astro**: El framework principal que utilicé para construir esta web. Astro es súper rápido y perfecto para proyectos como este.
+- **Tailwind CSS**: Para los estilos, porque no solo queremos que funcione, ¡también queremos que luzca increíble!
+- **PokeAPI**: La fuente de datos de nuestros Pokémon. Es una API gratuita y genial para obtener toda la información que necesitamos.
+- **JavaScript (TypeScript)**: Para la lógica del proyecto. TypeScript nos ayuda a mantener el código limpio y con menos errores.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ¿Cómo funciona?
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Ingresa el nombre de tu Pokémon favorito en el cuadro de búsqueda.
+2. Haz clic en "Get Pokemon" o presiona Enter.
+3. ¡Voilà! Obtendrás información detallada sobre tu Pokémon.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## ¿Por qué hice esto?
 
-## 🧞 Commands
+Quería sumergirme en el mundo de las APIs y entender mejor cómo integrarlas en mis proyectos. Astro me pareció una excelente opción para aprender por su simplicidad y rendimiento. Además, ¡quién no ama a los Pokémon!
 
-All commands are run from the root of the project, from a terminal:
+## ¿Cómo lo ejecuto en mi máquina?
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Si quieres probar este proyecto por ti mismo, sigue estos sencillos pasos:
 
-## 👀 Want to learn more?
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/jesuscgv/PokeFetch.git
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+2. Ve al directorio del proyecto:
+   ```bash
+   cd PokeFetch
+   ```
+
+3. Instala las dependencias:
+   ```bash
+   pnpm install
+   ```
+
+4. Ejecuta el proyecto:
+   ```bash
+   pnpm run dev
+   ```
+
+5. Abre tu navegador en `http://localhost:4321` y ¡disfruta!
+
+## Contribuciones
+
+Si tienes ideas para mejorar este proyecto, ¡serán bienvenidas! Puedes abrir un issue o hacer un pull request.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT.
+
+---
+
+¡Gracias por visitar PokeInfoHub! Si tienes alguna pregunta o sugerencia, no dudes en contactarme. ¡Que disfrutes explorando el mundo de los Pokémon! 😄
