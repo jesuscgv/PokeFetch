@@ -1,0 +1,92 @@
+---
+
+---
+
+<script>
+  interface PokemonType {
+    slot: number;
+    type: {
+      name: string;
+      url: string;
+    };
+  }
+
+  interface PokemonData {
+    name: string;
+    height: number;
+    weight: number;
+    types: PokemonType[];
+    sprites: {
+      front_default: string;
+    };
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const fetchButton = document.getElementById("fetchButton");
+    const pokemonNameInput = document.getElementById("pokemonName");
+
+    if (!fetchButton || !pokemonNameInput) {
+      console.error("No 'fetchButton' or 'pokemonName' element found");
+      return;
+    }
+
+    fetchButton.addEventListener("click", fetchPokemon);
+    pokemonNameInput.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        fetchPokemon();
+      }
+    });
+
+    function fetchPokemon() {
+      const pokemonNameElement = document.getElementById(
+        "pokemonName"
+      ) as HTMLInputElement;
+      const pokemonName = pokemonNameElement.value.toLowerCase();
+      const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const div = document.getElementById("pokemonData");
+          if (div) {
+            const types = data.types
+              .map((typeInfo: PokemonType) => typeInfo.type.name)
+              .join(", ");
+            const pokemonData = `
+                <h2 class="text-3xl font-bold justify-center">${data.name}</h2>
+                <img class="object-contain h-60 mx-auto" src="${data.sprites.front_default}" alt="${data.name}">
+                <p class="justify-center items-center opacity-90">Height: ${data.height}</p>
+                <p class="justify-center items-center opacity-90">Weight: ${data.weight}</p>
+                <p class="justify-center items-center opacity-90">Type: ${types}</p>
+              `;
+            div.innerHTML = pokemonData;
+          } else {
+            console.error("No 'pokemonData' element found");
+          }
+          pokemonNameElement.value = "";
+        })
+        .catch((error) => console.error("Error:", error));
+    }
+  });
+</script>
+<input
+  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+  type="text"
+  id="pokemonName"
+  placeholder="Enter Pokemon name"
+/>
+
+<div>
+  <button
+    class="py-3 hover:text-sky-700 hover:duration-300 font-medium opacity-80"
+    id="fetchButton"
+    class="py-4">Get Pokemon</button
+  >
+</div>
+<div id="pokemonData" class="flex flex-col items-center py-10">
+  <p></p>
+</div>
